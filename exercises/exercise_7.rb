@@ -10,3 +10,17 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+
+name = gets.chomp
+@store7 = Store.create(name: "#{name}")
+
+
+if !@store7.valid?
+  puts "Error occured while creating store"
+  @store7.errors.each {|error|
+    puts "Improper values on column: #{error}"
+  } 
+
+end
+
+
